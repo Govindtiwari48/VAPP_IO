@@ -1,6 +1,6 @@
 <h2 align="center">Welcome to VAPP.io</h2>
 <p align="center">
-  <img src="https://github.com/Govindtiwari48/VAPP_IO/blob/main/Images_and_logos/VAPP_logo.jpeg" alt="VAPP Logo">
+  <img src="Images_and_logos/VAPP_logo.png" alt="VAPP Logo">
 </p>
 
 # VAPP_IO
