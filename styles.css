@@ -1,29 +1,62 @@
 /* Custom Styles */
-body {
+/* Add margin to the whole website after the Hero Section */
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%; /* Ensure full width */
+    max-width: 100%; /* Prevent exceeding the viewport width */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth; /* Smooth scrolling */
 }
 
+body {
+    padding-top: 80px; /* Adjust this value based on the height of your header */
+}
+
 /* Hero Section */
-.hero {
+@media (max-width: 768px) {
+    .hero {
+        min-height: 60vh; /* Adjust height for smaller devices */
+    }
+    h1 {
+        font-size: 2.5rem; /* Adjust heading size for smaller devices */
+    }
+    p {
+        font-size: 1.25rem; /* Adjust paragraph size for smaller devices */
+    }
+}
+/* .hero {
     background: linear-gradient(to right, #6a11cb, #2575fc);
     color: white;
     padding: 60px 0;
     text-align: center;
+} */
+.navbar {
+    background-color: #000 !important; /* Ensure black background */
+    position: fixed; /* Fix the navbar at the top */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+.nav-link {
+    color: #ffffffec !important; /* Ensure white text for links */
+}
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1); /* Lighten the toggler border */
 }
 
-.hero h1 {
+/* .hero h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-}
+} */
 
 .hero .btn-primary {
     background-color: #007bff;
     border: none;
-    padding: 12px 30px;
-    font-size: 1.2rem;
+    padding: 12px 25px; /* Default padding */
+    font-size: 1.0rem; /* Default font size */
     border-radius: 8px;
     transition: all 0.3s ease;
 }
@@ -33,6 +66,113 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+
+/* Responsive adjustments for the button */
+@media (max-width: 768px) { /* For tablets and smaller screens */
+    .hero .btn-primary {
+        padding: 10px 20px; /* Smaller padding */
+        font-size: 0.9rem; /* Smaller font size */
+    }
+}
+
+@media (max-width: 576px) { /* For mobile devices */
+    .hero .btn-primary {
+        padding: 8px 16px; /* Even smaller padding */
+        font-size: 0.8rem; /* Even smaller font size */
+    }
+}
+
+
+
+    /* Ensure the Hero Section spans the full width */
+.hero {
+    margin-left: -3cm;
+    margin-right: -3cm;
+}
+
+    /* Ensure the Product Categories Section is centered and dynamic */
+    #our-product {
+        margin-left: -3cm;
+        margin-right: -3cm;
+        padding-left: 3cm;
+        padding-right: 3cm;
+    }
+
+
+
+
+    /* Gradient underline for the heading */
+    h1.position-relative::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px; /* Adjust the distance from the text */
+        width: 100%; /* Full width of the heading */
+        height: 5px; /* Height of the underline */
+        background: linear-gradient(to right, #8a2be2, #000); /* Purple to black gradient */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        h1.position-relative {
+            font-size: 2rem; /* Smaller font size for tablets */
+        }
+
+        h1.position-relative::after {
+            bottom: -3px; /* Adjust the distance from the text for smaller devices */
+            height: 2px; /* Thinner underline for smaller devices */
+        }
+    }
+
+    @media (max-width: 576px) {
+        h1.position-relative {
+            font-size: 1.5rem; /* Even smaller font size for phones */
+        }
+
+        h1.position-relative::after {
+            bottom: -2px; /* Adjust the distance from the text for phones */
+            height: 1.5px; /* Thinner underline for phones */
+        }
+    }
+
+    /* Gradient underline for the heading */
+    .gradient-underline {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px; /* Adjust the distance from the text */
+        width: 100%; /* Full width of the heading */
+        height: 3px; /* Height of the underline */
+        background: linear-gradient(to right, #8a2be2, #000); /* Purple to black gradient */
+    }
+
+    /* Category card styles */
+    .category-card {
+        background-color: #1a1a1a; /* Dark background for each card */
+        padding: 20px;
+        border-radius: 8px;
+        transition: transform 0.3s;
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+        justify-content: space-between; /* Equal height for all cards */
+    }
+
+    .category-card:hover {
+        transform: translateY(-5px); /* Lift effect on hover */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+    }
+
+    /* Light grey text for descriptions */
+    .text-light-grey {
+        color: #d3d3d3; /* Light grey color */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .category-card {
+            margin-bottom: 20px; /* Space between cards on smaller screens */
+        }
+    }
 
 /* Product Categories Section */
 .category-section {
@@ -132,64 +272,135 @@ body {
     transition: all 0.3s ease;
 }
 
+/* changes section for clients */
+
+    /* Gradient underline for the heading */
+    .gradient-underline {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px; /* Adjust the distance from the text */
+        width: 100%; /* Full width of the heading */
+        height: 3px; /* Height of the underline */
+        background: linear-gradient(to right, #8a2be2, #000); /* Purple to black gradient */
+    }
+
+    /* Brand logos styling */
+    .brand-logos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Space between rows */
+    }
+
+    .brand-row {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Space between logos */
+        flex-wrap: wrap; /* Wrap logos on smaller screens */
+    }
+
+    .brand-row img {
+        max-width: 100px; /* Set a maximum width for logos */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    @media (max-width: 768px) {
+        .display-6 {
+            font-size: 1.7rem; /* Adjust font size for smaller screens */
+        }
+
+        .brand-row img {
+            max-width: 80px; /* Smaller logos on mobile */
+        }
+    }
+
+    @media (max-width: 576px) {
+        .display-6 {
+            font-size: 1.2rem; /* Further adjust font size for extra small screens */
+        }
+
+        .brand-row img {
+            max-width: 60px; /* Even smaller logos on extra small screens */
+        }
+    }
+
 /* Impact Section Styling */
-#impact {
-    background-color: #f9f9f9; /* Light background for the section */
-    padding: 50px 0; /* Adjusted padding for balanced spacing */
-}
+New setting,
+    /* Gradient underline for the heading */
+    .gradient-underline {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px; /* Adjust the distance from the text */
+        width: 100%; /* Full width of the heading */
+        height: 3px; /* Height of the underline */
+        background: linear-gradient(to right, #8a2be2,  #000); /* Purple to black gradient */
+    }
 
-.graph-container {
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap to the next row */
-    gap: 24px; /* Increased gap for better separation */
-    justify-content: center; /* Center items horizontally */
-    max-width: 1200px; /* Prevent excessive stretching on large screens */
-    margin: 0 auto; /* Center the container */
-}
+    /* Graph container styling */
+    .graph-container {
+        display: flex;
+        flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        justify-content: center; /* Center the items */
+        gap: 20px; /* Space between graph items */
+    }
 
-.graph-item {
-    position: relative;
-    width: calc(33.33% - 16px); /* Ensures three items per row with spacing */
-    max-width: 390px; /* Restrict width for consistency */
-    height: 135px; /* Reduced height for better fit */
-    overflow: hidden; /* Hide overflow for hover effect */
-    border-radius: 10px; /* Slightly reduced for a sleek look */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-    background: #fff; /* Adds a clean background */
-}
+    .graph-item {
+        position: relative; /* Position for overlay */
+        max-width: 200px; /* Set a max width for graph items */
+        width: 100%; /* Allow full width on smaller screens */
+    }
 
-.graph-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Ensures the image fits perfectly without cropping */
-    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for hover effects */
-}
+    .graph-item img {
+        width: 100%; /* Responsive image */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .graph-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0; /* Initially hidden */
+        transition: opacity 0.3s; /* Smooth transition */
+    }
+
+    .graph-item:hover .graph-overlay {
+        opacity: 1; /* Show overlay on hover */
+    }
+
+    @media (max-width: 768px) {
+        .display-6 {
+            font-size: 2rem; /* Adjust font size for smaller screens */
+        }
+
+        .graph-item {
+            max-width: 150px; /* Smaller max width for graph items */
+        }
+    }
+
+    @media (max-width: 576px) {
+        .display-6 {
+            font-size: 2.0rem; /* Further adjust font size for extra small screens */
+        }
+
+        .graph-item {
+            max-width: 120px; /* Even smaller max width for graph items */
+        }
+    }
 
 
-.btn-primary {
-    background-color: #007bff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #0056b3;
-}
-
+ends
 /* Hover Effects */
 .graph-item:hover {
-    transform: scale(1.1); /* Slightly enlarge the container */
+    transform: scale(1.2); /* Slightly enlarge the container */
     box-shadow: 0 16px 15px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
 }
 
 .graph-item:hover img {
-    transform: scale(1.070); /* Enlarge the image */
+    transform: scale(1.090); /* Enlarge the image */
     filter: brightness(0.9) contrast(2); /* Enhance brightness and contrast */
 }
 
@@ -197,53 +408,86 @@ body {
     opacity: 1; /* Show overlay on hover */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .graph-item {
-        width: 90%; /* Full width on small screens */
-        height: 180px; /* Adjust height for smaller devices */
+/* contact us */
+    /* Gradient underline for the heading */
+    .gradient-underline {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px; /* Adjust the distance from the text */
+        width: 100%; /* Full width of the heading */
+        height: 3px; /* Height of the underline */
+        background: linear-gradient(to right, #8a2be2, #000); /* Purple to black gradient */
     }
-}
 
-/* Contact Us Section */
-#contact {
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-    padding: 6rem 0;
-}
+    /* Light grey text for descriptions */
+    .text-light-grey {
+        color: #d3d3d3; /* Light grey color */
+    }
 
-#contact h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    color: #333;
-}
+    /* Form styling */
+    .form-control {
+        background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+        border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+        color: #fff; /* White text */
+    }
 
-#contact p {
-    font-size: 1.1rem;
-    color: #666;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-}
+    .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.5); /* Light placeholder text */
+    }
 
-#contact .form-control {
-    border-radius: 8px;
-    border: 1px solid #e9ecef;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
+    .form-control:focus {
+        background-color: rgba(255, 255, 255, 0.2); /* Slightly darker on focus */
+        border-color: #8a2be2; /* Purple border on focus */
+        color: #fff; /* White text */
+    }
 
-#contact .form-control:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
-}
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .display-6 {
+            font-size: 2rem; /* Adjust font size for smaller screens */
+        }
+    }
 
-#contact .btn-primary {
-    background-color: #007bff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-}
+    @media (max-width: 576px) {
+        .display-6 {
+            font-size: 1.5rem; /* Further adjust font size for extra small screens */
+        }
+    }
 
-#contact .btn-primary:hover {
-    background-color: #0056b3;
-}
+
+/* icons section */
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .btn-lg {
+            font-size: 1rem; /* Smaller font size for buttons on smaller screens */
+            padding: 0.5rem 1rem; /* Adjust padding for smaller screens */
+        }
+    }
+
+    @media (max-width: 576px) {
+        .btn-lg {
+            width: 100%; /* Full width buttons on extra small screens */
+            margin-bottom: 10px; /* Space between buttons */
+        }
+    }
+/* Footer section */
+    .footer {
+        background-color: #000; /* Black background */
+        color: #fff; /* White text */
+    }
+    
+    .footer p {
+        margin: 0; /* Remove default margin */
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .footer {
+            padding: 1.5rem 0; /* Adjust padding for smaller screens */
+        }
+    }
+
+
+
+
