@@ -326,88 +326,93 @@ body {
     }
 
 /* Impact Section Styling */
-New setting,
-    /* Gradient underline for the heading */
-    .gradient-underline {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -5px; /* Adjust the distance from the text */
-        width: 100%; /* Full width of the heading */
-        height: 3px; /* Height of the underline */
-        background: linear-gradient(to right, #8a2be2,  #000); /* Purple to black gradient */
-    }
+/* Gradient underline for the heading */
+.gradient-underline {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Adjust the distance from the text */
+    width: 100%; /* Full width of the heading */
+    height: 3px; /* Height of the underline */
+    background: linear-gradient(to right, #8a2be2, #000); /* Purple to black gradient */
+}
 
-    /* Graph container styling */
-    .graph-container {
-        display: flex;
-        flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-        justify-content: center; /* Center the items */
-        gap: 20px; /* Space between graph items */
-    }
+/* Graph container styling */
+.graph-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Auto-adjusting grid */
+    gap: 20px; /* Space between graph items */
+    padding: 20px; /* Padding around the container */
+}
 
-    .graph-item {
-        position: relative; /* Position for overlay */
-        max-width: 200px; /* Set a max width for graph items */
-        width: 100%; /* Allow full width on smaller screens */
-    }
+.graph-item {
+    position: relative; /* Position for overlay */
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden; /* Ensure the image respects the border radius */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
 
-    .graph-item img {
-        width: 100%; /* Responsive image */
-        height: auto; /* Maintain aspect ratio */
-    }
+.graph-item img {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px; /* Rounded corners for the image */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transitions */
+}
 
-    .graph-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        opacity: 0; /* Initially hidden */
-        transition: opacity 0.3s; /* Smooth transition */
-    }
+.graph-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px; /* Rounded corners for the overlay */
+}
 
-    .graph-item:hover .graph-overlay {
-        opacity: 1; /* Show overlay on hover */
-    }
-
-    @media (max-width: 768px) {
-        .display-6 {
-            font-size: 2rem; /* Adjust font size for smaller screens */
-        }
-
-        .graph-item {
-            max-width: 150px; /* Smaller max width for graph items */
-        }
-    }
-
-    @media (max-width: 576px) {
-        .display-6 {
-            font-size: 2.0rem; /* Further adjust font size for extra small screens */
-        }
-
-        .graph-item {
-            max-width: 120px; /* Even smaller max width for graph items */
-        }
-    }
-
-
-ends
-/* Hover Effects */
 .graph-item:hover {
-    transform: scale(1.2); /* Slightly enlarge the container */
+    transform: scale(1.045); /* Slightly enlarge the container */
     box-shadow: 0 16px 15px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
 }
 
 .graph-item:hover img {
-    transform: scale(1.090); /* Enlarge the image */
-    filter: brightness(0.9) contrast(2); /* Enhance brightness and contrast */
+    transform: scale(1.045); /* Enlarge the image */
+    filter: brightness(0.9) contrast(1.2); /* Enhance brightness and contrast */
 }
 
 .graph-item:hover .graph-overlay {
     opacity: 1; /* Show overlay on hover */
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .display-6 {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+
+    .graph-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller columns */
+    }
+}
+
+@media (max-width: 576px) {
+    .display-6 {
+        font-size: 1.75rem; /* Further adjust font size for extra small screens */
+    }
+
+    .graph-container {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 15px; /* Reduce gap for smaller screens */
+    }
+
+    .graph-item {
+        max-width: 100%; /* Full width for small screens */
+    }
+}
 /* contact us */
     /* Gradient underline for the heading */
     .gradient-underline {
