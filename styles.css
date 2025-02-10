@@ -20,7 +20,7 @@ body {
     text-align: center;
 } */
 .navbar {
-    background-color: #000 !important; /* Ensure black background */
+    background-color: #ffffff !important; /* Ensure black background */
     position: fixed; /* Fix the navbar at the top */
     top: 0; /* Align to the top */
     left: 0; /* Align to the left */
@@ -28,7 +28,7 @@ body {
     z-index: 1000; /* Ensure it stays on top of other content */
 }
 .nav-link {
-    color: #ffffffec !important; /* Ensure white text for links */
+    color: #000000ec !important; /* Ensure white text for links */
 }
 .navbar-toggler {
     border-color: rgba(255, 255, 255, 0.1); /* Lighten the toggler border */
