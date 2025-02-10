@@ -4,7 +4,6 @@ html, body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
     width: 100%; /* Ensure full width */
     max-width: 100%; /* Prevent exceeding the viewport width */
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth; /* Smooth scrolling */
@@ -14,18 +13,6 @@ body {
     padding-top: 80px; /* Adjust this value based on the height of your header */
 }
 
-/* Hero Section */
-@media (max-width: 768px) {
-    .hero {
-        min-height: 60vh; /* Adjust height for smaller devices */
-    }
-    h1 {
-        font-size: 2.5rem; /* Adjust heading size for smaller devices */
-    }
-    p {
-        font-size: 1.15rem; /* Adjust paragraph size for smaller devices */
-    }
-}
 /* .hero {
     background: linear-gradient(to right, #6a11cb, #2575fc);
     color: white;
@@ -51,90 +38,87 @@ body {
     font-size: 3rem;
     margin-bottom: 20px;
 } */
+/* Import Outfit font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
-.hero .btn-primary {
-    background-color: #007bff;
-    border: none;
-    padding: 12px 25px; /* Default padding */
-    font-size: 1.0rem; /* Default font size */
-    border-radius: 8px;
-    transition: all 0.3s ease;
+/* Apply Outfit font to the entire document */
+body {
+    font-family: 'Outfit', sans-serif;
 }
 
-.hero .btn-primary:hover {
-    background-color: #0056b3;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive adjustments for the button */
-@media (max-width: 768px) { /* For tablets and smaller screens */
-    .hero .btn-primary {
-        padding: 10px 20px; /* Smaller padding */
-        font-size: 0.9rem; /* Smaller font size */
-    }
-}
-
-@media (max-width: 576px) { /* For mobile devices */
-    .hero .btn-primary {
-        padding: 8px 16px; /* Even smaller padding */
-        font-size: 0.8rem; /* Even smaller font size */
-    }
-}
-
-
-
-    /* Ensure the Hero Section spans the full width */
+/* Hero Section */
 .hero {
+    min-height: 80vh;
     margin-left: -3cm;
     margin-right: -3cm;
 }
 
-    /* Ensure the Product Categories Section is centered and dynamic */
-    #our-product {
-        margin-left: -3cm;
-        margin-right: -3cm;
-        padding-left: 3cm;
-        padding-right: 3cm;
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #e0e0e0;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Buttons Container */
+.d-flex.flex-wrap.justify-content-center.gap-3 {
+    margin-top: 20px; /* Add some spacing above the buttons */
+}
+
+/* Button Styling */
+.btn {
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 60vh;
     }
 
-
-
-
-    /* Gradient underline for the heading */
-    h1.position-relative::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -5px; /* Adjust the distance from the text */
-        width: 100%; /* Full width of the heading */
-        height: 5px; /* Height of the underline */
-        background: linear-gradient(to right, #8a2be2, #000); /* Purple to black gradient */
+    .hero h1 {
+        font-size: 2.5rem;
     }
 
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        h1.position-relative {
-            font-size: 2rem; /* Smaller font size for tablets */
-        }
-
-        h1.position-relative::after {
-            bottom: -3px; /* Adjust the distance from the text for smaller devices */
-            height: 2px; /* Thinner underline for smaller devices */
-        }
+    .hero p {
+        font-size: 1.15rem;
     }
 
-    @media (max-width: 576px) {
-        h1.position-relative {
-            font-size: 1.5rem; /* Even smaller font size for phones */
-        }
+    .btn {
+        padding: 10px 25px; /* Smaller padding */
+        font-size: 0.9rem; /* Smaller font size */
+    }
+}
 
-        h1.position-relative::after {
-            bottom: -2px; /* Adjust the distance from the text for phones */
-            height: 1.5px; /* Thinner underline for phones */
-        }
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 2rem;
     }
 
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 8px 20px; /* Even smaller padding */
+        font-size: 0.8rem; /* Even smaller font size */
+    }
+}
+/* hero section end here */
     /* Gradient underline for the heading */
     .gradient-underline {
         content: '';
